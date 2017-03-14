@@ -24,20 +24,23 @@ end
 	 erb:ttt_board, :locals => {:player1=>session[:player1], :player2=>session[:player2]}
 end
 
- get '/getLevel' do
+ post '/getMove' do
      player1 = session[:player1]
      player2 = session[:player2]
- 	 board = Board.new
+ 	 session[:board] = Board.new
 	  
- 	 while board.anyMoveLeft?()
-     	position1 = player1.getMove(board)
+ 	 while board.anyMoveLeft?() == true
+     	position1 = player1.getMove(board.getBoard())
+		board.setPosition(player1,position)
      	#send position1 to the interface
-     	position2 = player2.getMove(board)
-    	 #send position1 to the interface
+     	position1 = player2.getMove(board.getBoard())
+		board.setPosition(player2,position)
+     	#send position1 to the interface
      end
-     erb:ttt_board, :locals => {:board=>board}
+     erb:ttt_board, :locals => {:board=> session[:board]}
 	
-end
+	end
+
 
 	
 	

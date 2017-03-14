@@ -11,7 +11,7 @@
 
 <p>Choose a level to play this game:</p>
   <form method="post" action="getLevel">  
-    <p>Player 1 (X):
+    <p>Level:
       <select type="text" name="p1_type"> 
         <option value="Human_player">Human</option>
         <option value="Random_player">Easy</option>
@@ -23,11 +23,11 @@
   </form>
 
 
-<form action="/getLevel" method="get">
+<form action="/getMove" method="post">
 <table id='board'>
 
   <tr>
-    <td><%= board[0] %></td>
+    <td><%board[0]></td>
     <td>1</td><td>2</td>
   </tr>
   <tr>
