@@ -1,0 +1,27 @@
+1. In a game against the computer, allow the human player to choose a skill level: beginner, 
+intermediate, expert.
+chooseLevel()
+
+2. Provide a graphical representation of the tic-tac-toe board.
+
+3. Chose a position to play (Allow the player to choose where to place an X or O by moving the mouse to a square)
+
+4. Check for winner
+
+5. Give the players an option to play again or quit.
+
+6. Track the number of wins and losses for each player and display the records at the
+
+user�s request.
+
+Human-Computer Interface Description: The main interface consists of the traditional
+tic-tac-toe board. To place an X or O, the user moves the mouse over the desired square and clicks. The system will then fill the square with the correct symbol for that player. Beneath the board, the system notifies the player when it is his or her turn. The interface also consists of opening screens that prompt the user for game information, such as whether this game will be played against the computer, ,and the symbols the players will use to represent X or O. At the end of the game, the system uses a dialog to notify the player(s) of the winner and ask the player(s) if they wish to play another game or exit the program.
+
+Allow players to choose to play against a human or the computer.
+
+Level:
+Begginer - AI use randow choices
+Intermediate- AI already know some plays
+Advanced- AI knows all games and always win or Tie.
+
+
