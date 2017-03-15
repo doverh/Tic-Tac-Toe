@@ -12,22 +12,21 @@
 <p>Choose a level to play this game:</p>
   <form method="post" action="getLevel">  
     <p>Level:
-      <select type="text" name="p1_type"> 
-        <option value="Human_player">Human</option>
+      <select type="text" name="level"> 
         <option value="Random_player">Easy</option>
         <option value="Sequential_player">Medium</option>
-        <option value="Unbeatable_player_player">Hard</option>
+        <option value="Unbeatable_player">Hard</option>
       </select>
     </p>
     <input type="submit" value="Submit"> 
   </form>
 
 
-<form action="/getMove" method="post">
+<form action="/getMove" method="get">
 <table id='board'>
 
   <tr>
-    <td><%board[0]></td>
+    <td>0</td>
     <td>1</td><td>2</td>
   </tr>
   <tr>
@@ -40,6 +39,8 @@
 </table>
     <input type="submit" value="Submit"> 
 </form>
-             
+
+<div>Result = <%=@result%> </div>
+
 </body>  
 </html>

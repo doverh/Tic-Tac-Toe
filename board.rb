@@ -10,7 +10,6 @@ class Board
 
 		
 	def setPosition(player, position)
-
 		board_table[position] = player.mark
 		return board_table
 	end
@@ -66,5 +65,18 @@ class Board
 
 	def getBoard()
 		return board_table
+	end
+
+	#show results
+	def results(board,player1,player2)
+		if board.check_winner(player1) == true
+			finalResult = "Player1 won"
+		elsif board.check_winner(player2) == true
+			finalResult = "Player2 won"
+		else
+			finalResult = "We have a draw"
+		end
+		puts finalResult
+	return finalResult
 	end
 end

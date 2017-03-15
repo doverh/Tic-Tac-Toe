@@ -28,16 +28,5 @@ end
 	end
 
 
-	#show results
-	def results()
-		if board_table.check_winner(player1) == true
-			finalResult = "Player1 won"
-		elsif board_table.check_winner(player2) == true
-			finalResult = "Player2 won"
-		else
-			finalResult = "We have a draw"
-		end
-		puts finalResult
-	return finalResult
-	end
+	
 end
