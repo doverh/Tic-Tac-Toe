@@ -63,6 +63,10 @@ class Board
 
 	end
 
+	def getIndexat(position)
+		return board_table[position]	
+	end
+
 	def getBoard()
 		return board_table
 	end
