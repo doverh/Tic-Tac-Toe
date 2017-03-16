@@ -80,7 +80,6 @@ class Board
 		else
 			finalResult = "We have a draw"
 		end
-		puts finalResult
 	return finalResult
 	end
 end

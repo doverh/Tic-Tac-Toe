@@ -21,26 +21,46 @@
     <input type="submit" value="Submit"> 
   </form>
 
-
-<form action="/getMove" method="get">
+<form method="post" action="getMove">  
 <table id='board'>
 
   <tr>
-    <td><%=@show_board%></td>
-    <td>1</td><td>2</td>
+    <td><%=session[:board].board_table[0]%></td>
+    <td><%=session[:board].board_table[1]%></td>
+    <td><%=session[:board].board_table[2]%></td>
   </tr>
   <tr>
-    <td>3</td><td>4</td><td>5</td>
+    <td><%=session[:board].board_table[3]%></td>
+    <td><%=session[:board].board_table[4]%></td>
+    <td><%=session[:board].board_table[5]%></td>
   </tr>
   <tr>
-    <td>6</td><td>7</td><td>8</td>
+    <td><%=session[:board].board_table[6]%></td>
+    <td><%=session[:board].board_table[7]%></td>
+    <td><%=session[:board].board_table[8]%></td>
   </tr>
   </div>
 </table>
-    <input type="submit" value="Submit"> 
-</form>
+<p>Choose a position to play :</p>
 
-<div>Result = <%=@result%> </div>
+    <p>Position:
+      <select type="text" name="position"> 
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+      </select>
+    </p>
+    <div>Result = <%=session[:result]%> </div>
+    <input type="submit" value="Submit"> 
+  </form>
+
+
 
 </body>  
 </html>
