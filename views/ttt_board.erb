@@ -1,14 +1,4 @@
-<html>
-<head> 
-<title> Tic-Tac-Toe </title>    
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript" charset="utf-8"></script>  
-<link type="text/css" rel="stylesheet" href="style.css" />
- 
-</head>
-<body>
-
-
-
+<h1>TIC TAC TOE</h1>
 <p>Choose a level to play this game:</p>
   <form method="post" action="getLevel">  
     <p>Level:
@@ -17,9 +7,10 @@
         <option value="Sequential_player">Medium</option>
         <option value="Unbeatable_player">Hard</option>
       </select>
+    <input type="submit" value="Select"> 
+ 
     </p>
-    <input type="submit" value="Submit"> 
-  </form>
+     </form>
 
 <form method="post" action="getMove">  
 <table id='board'>
@@ -41,9 +32,7 @@
   </tr>
   </div>
 </table>
-<p>Choose a position to play :</p>
-
-    <p>Position:
+<p>Choose a position to play :
       <select type="text" name="position"> 
         <option value="0">0</option>
         <option value="1">1</option>
@@ -59,8 +48,4 @@
     <div>Result = <%=session[:result]%> </div>
     <input type="submit" value="Submit"> 
   </form>
-
-
-
-</body>  
-</html>
+</body>
