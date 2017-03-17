@@ -1,6 +1,10 @@
-<h1>TIC TAC TOE</h1>
-<p>Choose a level to play this game:</p>
-  <form method="post" action="getLevel">  
+
+<H1>TIC TAC TOE</H1>
+<div ng-app="">
+<!-- <p>Whats your name <input type="text" ng-model="name" placeholder="Enter name here"></p>
+<p>{{ name }} , choose a level to play this game:</p> -->
+</div>
+<form method="post" action="getLevel">  
     <p>Level:
       <select type="text" name="level"> 
         <option value="Random_player">Easy</option>
@@ -16,36 +20,25 @@
 <table id='board'>
 
   <tr>
-    <td><%=session[:board].board_table[0]%></td>
-    <td><%=session[:board].board_table[1]%></td>
-    <td><%=session[:board].board_table[2]%></td>
+    <td><button class="buttontd" type="submit" name="position[]" value="0"><%=session[:board].board_table[0]%></button></td>
+    <td><button class="buttontd"  type="submit" name="position[]" value="1"><%=session[:board].board_table[1]%></button></td>
+   <td><button class="buttontd"  type="submit" name="position[]" value="2"><%=session[:board].board_table[2]%></button></td>
   </tr>
   <tr>
-    <td><%=session[:board].board_table[3]%></td>
-    <td><%=session[:board].board_table[4]%></td>
-    <td><%=session[:board].board_table[5]%></td>
+    <td><button class="buttontd" type="submit" name="position[]" value="3"><%=session[:board].board_table[3]%></button></td>
+    <td><button class="buttontd"  type="submit" name="position[]" value="4"><%=session[:board].board_table[4]%></button></td>
+   <td><button class="buttontd"  type="submit" name="position[]" value="5"><%=session[:board].board_table[5]%></button></td>
   </tr>
   <tr>
-    <td><%=session[:board].board_table[6]%></td>
-    <td><%=session[:board].board_table[7]%></td>
-    <td><%=session[:board].board_table[8]%></td>
+    <td><button class="buttontd" type="submit" name="position[]" value="6"><%=session[:board].board_table[6]%></button></td>
+    <td><button class="buttontd"  type="submit" name="position[]" value="7"><%=session[:board].board_table[7]%></button></td>
+   <td><button class="buttontd"  type="submit" name="position[]" value="8"><%=session[:board].board_table[8]%></button></td>
   </tr>
   </div>
 </table>
-<p>Choose a position to play :
-      <select type="text" name="position"> 
-        <option value="0">0</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-      </select>
-    </p>
+<br>
     <div>Result = <%=session[:result]%> </div>
-    <input type="submit" value="Submit"> 
-  </form>
+<!--           <input type="submit" value="Submit"> 
+ -->  
+ </form>
 </body>

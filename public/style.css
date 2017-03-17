@@ -1,4 +1,4 @@
-*{
+body{
   margin: 20px; 
   padding: 0;
  
@@ -7,6 +7,12 @@ background: #E6DADA; /* fallback for old browsers */
 background: -webkit-linear-gradient(to left, #E6DADA , #274046); /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to left, #E6DADA , #274046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         
+}
+
+.buttontd {
+  width: 100px; 
+  height: 100px;
+  font: 20px arial, sans-serif;
 }
 
 table { 
@@ -33,4 +39,5 @@ table {
   background: #e4e4e4; 
   cursor: pointer; 
 }
+
 

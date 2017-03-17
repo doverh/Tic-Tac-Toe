@@ -28,9 +28,35 @@ end
      player1 = Human_player.new('X') 
      board_table = session[:board]
      player2 = session[:player2]
-     position = params["position"].to_i
- 	 
-     #Create an object depending on what user selected
+     if params["position"][0].to_i == 0
+     	position = 0
+     elsif params["position"][0].to_i == 1
+     	position = 1
+     elsif params["position"][0].to_i == 2
+     	position = 2
+     elsif params["position"][0].to_i ==3
+     	position = 3
+     elsif params["position"][0].to_i == 4
+     	position = 4
+     elsif params["position"][0].to_i == 5
+     	position = 5
+     elsif params["position"][0].to_i == 6
+     	position = 6
+     elsif params["position"][0].to_i == 7
+     	position = 7	
+    else position = 8
+    end 
+     	
+
+ 	 # position = params["position1"].to_i
+ 	 # position = params["position2"].to_i
+ 	 # position = params["position3"].to_i
+ 	 # position = params["position4"].to_i
+ 	 # position = params["position5"].to_i
+ 	 # position = params["position6"].to_i
+   #   position = params["position7"].to_i
+ 	 # position = params["position8"].to_i
+   #   #Create an object depending on what user selected
      if player2 == "Random_player"
      	player2 = Random_player.new("O")
      elsif player2 == "Sequential_player"
