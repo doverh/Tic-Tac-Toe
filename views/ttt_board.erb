@@ -19,9 +19,14 @@
 <form method="post" action="getMove">  
 <table id='board'>
 
+<div>
+  PLAYER WINS: <%=session[:playerWin]%>
+</div>
+<div>
+COMPUTER WINS: <%=session[:computerWin]%>
+</div>
 
-</a>
-  <tr>
+<tr>
     <td><button class="buttontd" type="submit" name="position[]" value="0"><%=session[:board].board_table[0]%></button></td>
     <td><button class="buttontd"  type="submit" name="position[]" value="1"><%=session[:board].board_table[1]%></button></td>
    <td><button class="buttontd"  type="submit" name="position[]" value="2"><%=session[:board].board_table[2]%></button></td>

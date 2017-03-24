@@ -54,7 +54,7 @@ class Board
 
 
 	#Check if its position available
-	def anyMoveLeft?()
+	def anyMoveLeft?
 		if board_table.include?("-")
 			return true
 		else
@@ -78,15 +78,15 @@ class Board
 	#show results
 	def results(board,player1,player2)
 		if board.check_winner(player1) == true
-			finalResult = "Player1 won"
+			finalResult = "Player1 won!"
 		elsif board.check_winner(player2) == true
-			finalResult = "Player2 won"
+			finalResult = "Computer won!"
 		elsif
 			board.isBoardFull == true
-			finalResult = "We have a draw"
+			finalResult = "We have a tie!"
 		else 
 			finalResult = ""
 		end
 	return finalResult
 	end
-end
+end	

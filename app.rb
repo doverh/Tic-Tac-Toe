@@ -47,16 +47,11 @@ end
     else position = 8
     end 
      	
-
- 	 # position = params["position1"].to_i
- 	 # position = params["position2"].to_i
- 	 # position = params["position3"].to_i
- 	 # position = params["position4"].to_i
- 	 # position = params["position5"].to_i
- 	 # position = params["position6"].to_i
-   #   position = params["position7"].to_i
- 	 # position = params["position8"].to_i
-   #   #Create an object depending on what user selected
+    #Variables to count the number of victories
+    #session[:playerWin] = 0
+    #session[:computerWin] = 0    
+    
+    # Create an object depending on what user selected
      if player2 == "Random_player"
      	player2 = Random_player.new("O")
      elsif player2 == "Sequential_player"
@@ -66,16 +61,14 @@ end
      end
      puts "position #{position}"
 
-    # loop do 
-    	# || board_table.check_winner(player1) == false || board_table.check_winner(player2) == false
-
+   
 	if player1.positionAvailable?(board_table.getBoard(),position) == true
 				board_table.setPosition(player1,position)
-		if board_table.check_winner(player1) == true ||  board_table.anyMoveLeft?() == false
-			session[:result]  = board_table.results(board_table,player1,player2)
-			 puts "Result #{session[:result]}"
+		if board_table.check_winner(player1) == true || board_table.anyMoveLeft?() == false
+			session[:result]  = board_table.results(board_table,player1,player2)     
 		end
-		
+        
+    		
 		if  board_table.anyMoveLeft?() == true
 			position1 = player2.getMove(board_table.getBoard())
 			if player2.positionAvailable?(board_table.getBoard(),position1) == true
@@ -83,12 +76,21 @@ end
  	 		end
  	 		if board_table.check_winner(player2) == true ||  board_table.anyMoveLeft?() == false
 				session[:result]  = board_table.results(board_table,player1,player2)
-			end
-		end
-		session[:result]  = board_table.results(board_table,player1,player2)
+            end
+        end
+		    session[:result]  = board_table.results(board_table,player1,player2)
 	end	
-		
-	 erb:ttt_board, :locals => {:board_table=>params[:board_table], :result=>session[:result]}
+
+	
+    if board_table.anyMoveLeft?() == false
+        if board_table.results(board_table,player1,player2) == "Player1 won!"
+            session[:playerWin] = session[:playerWin] +1
+        elsif board_table.results(board_table,player1,player2) == "Computer won!"
+            session[:computerWin] = session[:computerWin] +1
+        end
+    end    
+
+	 erb:ttt_board, :locals => {:board_table=>params[:board_table], :result=>session[:result], :playerWin=>session[:playerWin], :computerWin=>session[:computerWin]}
 	
 	
 	end
