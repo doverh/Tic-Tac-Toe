@@ -48,8 +48,8 @@ end
     end 
      	
     #Variables to count the number of victories
-    #session[:playerWin] = 0
-    #session[:computerWin] = 0    
+    session[:playerWin] = 0
+    session[:computerWin] = 0    
     
     # Create an object depending on what user selected
      if player2 == "Random_player"
