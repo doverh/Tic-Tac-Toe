@@ -88,7 +88,16 @@ class Unbeatable_player
 		position = 1
 		return position
 	end
-		
+	
+
+	def positionAvailable?(board,position)
+		if board[position] == "-"
+			return true
+		else
+			return false
+		end
+	end
+
 
     #This method check if a win is possible
 	def check_for_win_or_block(board_table,player_mark)

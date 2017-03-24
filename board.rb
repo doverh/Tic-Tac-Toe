@@ -33,7 +33,7 @@ class Board
     
     #Check for a winner
 	def check_winner(player)
-		 # print board_table
+		
 
 		 win_lines = [[board_table[0],board_table[1],board_table[2]],
 		 			[board_table[3],board_table[4],board_table[5]],
@@ -67,6 +67,10 @@ class Board
 		return board_table[position]	
 	end
 
+	def isBoardFull
+		!board_table.include?("-")
+	end
+
 	def getBoard()
 		return board_table
 	end
@@ -77,8 +81,11 @@ class Board
 			finalResult = "Player1 won"
 		elsif board.check_winner(player2) == true
 			finalResult = "Player2 won"
-		else
+		elsif
+			board.isBoardFull == true
 			finalResult = "We have a draw"
+		else 
+			finalResult = ""
 		end
 	return finalResult
 	end
