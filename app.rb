@@ -48,8 +48,8 @@ end
     end 
      	
     #Variables to count the number of victories
-    session[:playerWin] = 0
-    session[:computerWin] = 0    
+    session[:playerWin] 
+    session[:computerWin]   
     
     # Create an object depending on what user selected
      if player2 == "Random_player"
@@ -62,14 +62,13 @@ end
      puts "position #{position}"
 
    
-	if player1.positionAvailable?(board_table.getBoard(),position) == true
+	if player1.positionAvailable?(board_table.getBoard(),position) == true && board_table.results(board_table,player1,player2) == ""
 				board_table.setPosition(player1,position)
 		if board_table.check_winner(player1) == true || board_table.anyMoveLeft?() == false
 			session[:result]  = board_table.results(board_table,player1,player2)     
 		end
-        
-    		
-		if  board_table.anyMoveLeft?() == true
+    	
+		if  board_table.anyMoveLeft?() == true && board_table.results(board_table,player1,player2) == ""
 			position1 = player2.getMove(board_table.getBoard())
 			if player2.positionAvailable?(board_table.getBoard(),position1) == true
   		   		board_table.setPosition(player2,position1)
@@ -81,14 +80,15 @@ end
 		    session[:result]  = board_table.results(board_table,player1,player2)
 	end	
 
-	
-    if board_table.anyMoveLeft?() == false
+
         if board_table.results(board_table,player1,player2) == "Player1 won!"
             session[:playerWin] = session[:playerWin] +1
+            board_table.finishBoard
         elsif board_table.results(board_table,player1,player2) == "Computer won!"
             session[:computerWin] = session[:computerWin] +1
+            board_table.finishBoard
         end
-    end    
+  
 
 	 erb:ttt_board, :locals => {:board_table=>params[:board_table], :result=>session[:result], :playerWin=>session[:playerWin], :computerWin=>session[:computerWin]}
 	

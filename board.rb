@@ -70,7 +70,14 @@ class Board
 	def isBoardFull
 		!board_table.include?("-")
 	end
-
+	
+	def finishBoard
+		while board_table.include?("-")
+		 position = board_table.index("-")	
+		 board_table[position] = "/"
+		end
+	end
+		
 	def getBoard()
 		return board_table
 	end
