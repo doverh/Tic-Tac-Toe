@@ -59,8 +59,8 @@ end
     else position = 8
     end 
      	
-    session[:playerWin]
-    session[:computerWin]    
+    session[:playerWin] = session[:playerWin]
+    session[:computerWin] = session[:computerWin]    
     #CALL THE APPROPPRIATE METHODS TO PLAY THE GAME
 	
     #PLAYER 1 PLAY IF ANY MOVE LEFT AND NO RESULTS AVAILABLE
