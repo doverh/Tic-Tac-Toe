@@ -51,6 +51,8 @@ class Board
          	 end
         return false
     end
+  	
+
 
 
 	#Check if its position available
