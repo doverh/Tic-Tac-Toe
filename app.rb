@@ -59,8 +59,9 @@ end
     else position = 8
     end 
      	
-    session[:playerWin] = session[:playerWin]
-    session[:computerWin] = session[:computerWin]    
+    # session[:playerWin] = session[:playerWin]
+    # session[:computerWin] = session[:computerWin]    
+    
     #CALL THE APPROPPRIATE METHODS TO PLAY THE GAME
 	
     #PLAYER 1 PLAY IF ANY MOVE LEFT AND NO RESULTS AVAILABLE
@@ -70,7 +71,7 @@ end
         if board_table.check_winner(player1) == true || board_table.anyMoveLeft?() == false
 			session[:result]  = board_table.results(board_table,player1,player2)
             #ADD VICTORY TO PLAYER 1
-            session[:playerWin] = session[:playerWin] +1
+            # session[:playerWin] = session[:playerWin] +1
             board_table.finishBoard     
 		end
 
@@ -83,7 +84,7 @@ end
             #CHECK IF PLAYER 2 WON
  	 		if board_table.check_winner(player2) == true ||  board_table.anyMoveLeft?() == false
 				session[:result]  = board_table.results(board_table,player1,player2)
-                session[:computerWin] = session[:computerWin] +1
+                # session[:computerWin] = session[:computerWin] +1
                 board_table.finishBoard
             end
         end
