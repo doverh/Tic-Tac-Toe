@@ -59,6 +59,8 @@ end
     else position = 8
     end 
      	
+    session[:playerWin] = 0
+    session[:computerWin]= 0    
     #CALL THE APPROPPRIATE METHODS TO PLAY THE GAME
 	
     #PLAYER 1 PLAY IF ANY MOVE LEFT AND NO RESULTS AVAILABLE
