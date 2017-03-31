@@ -6,16 +6,24 @@
 </div>
 <form method="post" action="getLevel">  
     <p>Level:
-      <select type="text" name="level"> 
+      <select type="text" name="level" id="mySelect"> 
+        <option value=""></option>
         <option value="Random_player">Easy</option>
         <option value="Sequential_player">Medium</option>
         <option value="Unbeatable_player">Hard</option>
       </select>
-    <input type="submit" value="Select"> 
- 
+    <button type="submit" onclick="myFunction()">Play</button>
+
     </p>
      </form>
+   <!--  <script>
+        function myFunction(){
+          document.getElementById("mySelect").value = "Unbeatable_player";
+          //alert("Test");
+        }
+    </script> -->
 
+You are playing against <%=session[:player2]%>!
 <form method="post" action="getMove">  
 <table id='board'>
 <!-- 
