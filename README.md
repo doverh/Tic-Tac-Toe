@@ -15,3 +15,4 @@ To learn more visit https://en.wikipedia.org/wiki/Tic-tac-toe
    
    3. Run the file with command: ruby "app.rb" 
 
+Play at https://playtictactoegame.herokuapp.com/
